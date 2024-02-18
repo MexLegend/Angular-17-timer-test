@@ -1,5 +1,11 @@
 @use "variables/typography.scss" as typo;
 
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
 html,
 body {
   height: 100%;
@@ -9,6 +15,7 @@ body {
   margin: 0;
   font-family: typo.$main-font;
   cursor: url("/assets/images/cursor.png") 14 0, pointer;
+  line-height: 1.5;
 }
 
 a,

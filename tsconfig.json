@@ -5,7 +5,8 @@
     "outDir": "./dist/out-tsc",
     "baseUrl": "./src",
     "paths": {
-      "@styleVariables/*" : ["styles/variables/*"]
+      "@styleVariables/*" : ["styles/variables/*"],
+      "@pages/*" : ["app/pages/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "strict": true,

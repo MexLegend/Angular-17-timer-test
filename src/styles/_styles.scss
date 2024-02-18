@@ -1,0 +1,22 @@
+@use "variables/typography.scss" as typo;
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: typo.$main-font;
+  cursor: url("/assets/images/cursor.png") 14 0, pointer;
+}
+
+a,
+button {
+  cursor: url("/assets/images/cursor-click.png") 14 0, pointer;
+}
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+}

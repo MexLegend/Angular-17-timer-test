@@ -1,0 +1,50 @@
+@use "@styleVariables/typography.scss" as typo;
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  border-bottom: 4px solid #d3d3d3;
+  background-color: white;
+
+  &__wrapper {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: start;
+
+      h3 {
+        font-family: typo.$heading-font;
+        padding-left: 65px;
+        margin: 0;
+      }
+    }
+
+    .social-media {
+      display: flex;
+      align-items: center;
+      gap: 1.2rem;
+      list-style: none;
+
+      li,
+      a {
+        display: flex;
+        height: fit-content;
+        transition: transform ease-in-out .2s;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}

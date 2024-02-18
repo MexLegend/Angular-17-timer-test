@@ -1,6 +1,4 @@
 .nes-btn {
-  color: #fff;
-  background-color: #209cee;
   text-align: center;
   user-select: none;
   border-image-slice: 2;
@@ -23,6 +21,10 @@
   border-width: 4px;
   transition: all ease-in 0.125s;
 
+  &.toogle-btn {
+    min-width: 100px;
+  }
+
   &::after {
     position: absolute;
     top: -4px;
@@ -30,25 +32,73 @@
     bottom: -4px;
     left: -4px;
     content: "";
-    box-shadow: inset -4px -4px #006bb3;
   }
 
   &:hover {
     text-decoration: none;
-    background-color: #108de0;
+  }
+
+  &--is-primary {
+    color: #fff;
+    background-color: #209cee;
 
     &::after {
-      box-shadow: inset -6px -6px #006bb3;
+      box-shadow: inset -4px -4px #006bb3;
+    }
+
+    &:hover {
+      background-color: #108de0;
+
+      &::after {
+        box-shadow: inset -6px -6px #006bb3;
+      }
+    }
+
+    &:active:not(.is-disabled)::after {
+      box-shadow: inset 4px 4px #006bb3;
     }
   }
 
-  &:active:not(.is-disabled)::after {
-    box-shadow: inset 4px 4px #006bb3;
+  &--is-success {
+    color: #fff;
+    background-color: #92cc41;
+
+    &::after {
+      box-shadow: inset -4px -4px #4aa52e;
+    }
+
+    &:hover {
+      background-color: #76c442;
+
+      &::after {
+        box-shadow: inset -6px -6px #4aa52e;
+      }
+    }
+
+    &:active:not(.is-disabled)::after {
+      box-shadow: inset 4px 4px #4aa52e;
+    }
   }
 
-  &__primary {
-    color: #212529;
-    background-color: #fff;
+  &--is-error {
+    color: #fff;
+    background-color: #e76e55;
+
+    &::after {
+      box-shadow: inset -4px -4px #8c2022;
+    }
+
+    &:hover {
+      background-color: #ce372b;
+
+      &::after {
+        box-shadow: inset -6px -6px #8c2022;
+      }
+    }
+
+    &:active:not(.is-disabled)::after {
+      box-shadow: inset 4px 4px #8c2022;
+    }
   }
 }
 

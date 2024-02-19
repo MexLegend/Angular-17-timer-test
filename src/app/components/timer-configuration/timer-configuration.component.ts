@@ -5,7 +5,12 @@ import { AsyncPipe, NgIf } from '@angular/common';
 import { Observable } from 'rxjs';
 import { TimerService } from 'app/core/services/timer.service';
 import { RadioGroupComponent } from '../radio-group/radio-group.component';
-import { FormGroup, NonNullableFormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import {
+  FormGroup,
+  NonNullableFormBuilder,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { ITimerForm } from 'app/core/interfaces/timer.interface';
 
 @Component({
@@ -43,12 +48,10 @@ export class TimerConfigurationComponent {
 
   startTimer() {
     if (this.form.valid) {
-      const { timerValue, isCountdown } = this.form.getRawValue();
+      const timerConfig = this.form.getRawValue();
 
-      console.log({ timerValue, isCountdown });
-
-      return;
-      this._timerService.startTimer();
+      this._timerService.startTimer(timerConfig);
+      this.form.reset();
     }
   }
 }

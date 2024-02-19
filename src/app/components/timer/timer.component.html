@@ -1,9 +1,4 @@
-<article class="timer-container">
-  <app-button
-    *ngIf="showTimer | async"
-    label="Stop timer"
-    type="ERROR"
-    (handleClick)="stopTimer()"
-  />
+<article *ngIf="showTimer | async" class="timer-container">
+  <app-button label="Stop timer" type="ERROR" (handleClick)="stopTimer()" />
   <p class="timer-value">{{ timer$ | async | timer }}</p>
 </article>

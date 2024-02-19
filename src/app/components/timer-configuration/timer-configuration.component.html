@@ -1,4 +1,4 @@
-<article class="timer-config-container">
+<article *ngIf="!(showTimer | async)" class="timer-config-container">
   <form class="timer-config-container__form" [formGroup]="form">
     <app-input
       inputId="timer"
@@ -14,9 +14,5 @@
       controlKey="isCountdown"
     />
   </form>
-  <app-button
-    *ngIf="!(showTimer | async)"
-    label="Start timer"
-    (handleClick)="startTimer()"
-  />
+  <app-button label="Start timer" (handleClick)="startTimer()" />
 </article>

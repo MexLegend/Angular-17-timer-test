@@ -1,5 +1,5 @@
 import { NgClass } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 type NesButtonType = 'PRIMARY' | 'SUCCESS' | 'ERROR';
 
@@ -14,4 +14,9 @@ export class ButtonComponent {
   @Input({ required: true }) label!: string;
   @Input() type: NesButtonType = 'PRIMARY';
   @Input() customClasses?: string;
+  @Output() handleClick: EventEmitter<boolean> = new EventEmitter();
+
+  emitClick() {
+    this.handleClick.emit(true);
+  }
 }

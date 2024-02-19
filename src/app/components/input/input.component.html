@@ -1,0 +1,12 @@
+<fieldset class="nes-input">
+  <label *ngIf="label" [for]="inputId" class="nes-input__label">{{
+    label
+  }}</label>
+  <input
+    [id]="inputId"
+    [type]="type"
+    class="nes-input__field"
+    [placeholder]="placeholder"
+    [formControl]="formControl"
+  />
+</fieldset>

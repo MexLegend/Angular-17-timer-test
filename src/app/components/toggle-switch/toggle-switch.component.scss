@@ -1,0 +1,142 @@
+@use "@styleVariables/colors.scss" as color;
+
+$toggle-border-size: 4px;
+$toggle-border-color: color.$error-color;
+$toggle-hover-color: color.$error-hover-color;
+$toggle-height: 40px;
+$toggle-width: 110px;
+$toggle-height: 40px;
+$toggle-btn-height: 18px;
+$toggle-inner-paddig: calc(($toggle-height - $toggle-btn-height) / 2);
+$toggle-btn-translate-value: calc($toggle-width - $toggle-height) -
+  $toggle-border-size;
+$toggle-btn-clip-path: polygon(
+  0px calc(100% - 16px),
+  4px calc(100% - 16px),
+  4px calc(100% - 8px),
+  8px calc(100% - 8px),
+  8px calc(100% - 4px),
+  16px calc(100% - 4px),
+  16px 100%,
+  calc(100% - 16px) 100%,
+  calc(100% - 16px) calc(100% - 4px),
+  calc(100% - 8px) calc(100% - 4px),
+  calc(100% - 8px) calc(100% - 8px),
+  calc(100% - 4px) calc(100% - 8px),
+  calc(100% - 4px) calc(100% - 16px),
+  100% calc(100% - 16px),
+  100% 16px,
+  calc(100% - 4px) 16px,
+  calc(100% - 4px) 8px,
+  calc(100% - 8px) 8px,
+  calc(100% - 8px) 4px,
+  calc(100% - 16px) 4px,
+  calc(100% - 16px) 0px,
+  16px 0px,
+  16px 4px,
+  8px 4px,
+  8px 8px,
+  4px 8px,
+  4px 16px,
+  0px 16px
+);
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: $toggle-width;
+  height: $toggle-height;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+
+    &:checked + .slider {
+      background-color: color.$success-color;
+      color: white;
+
+      &::before {
+        -webkit-transform: translateXvar($toggle-btn-translate-value);
+        -ms-transform: translateX($toggle-btn-translate-value);
+        transform: translateX($toggle-btn-translate-value);
+      }
+
+      &::after {
+        content: "ON";
+        padding-left: 0;
+        padding-right: calc($toggle-height - 12px);
+      }
+
+      &:hover {
+        $toggle-hover-color: color.$success-hover-color;
+        background-color: $toggle-hover-color;
+      }
+    }
+
+    &:focus + .slider {
+      box-shadow: 0 0 1px color.$success-color;
+    }
+  }
+
+  .slider {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0 0.5rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: color.$error-color;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    border-radius: 100px;
+    clip-path: $toggle-btn-clip-path;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 10;
+      height: $toggle-btn-height;
+      width: $toggle-btn-height;
+      left: $toggle-inner-paddig + calc($toggle-border-size / 2);
+      bottom: $toggle-inner-paddig;
+      background-color: white;
+      box-shadow: 0 4px white, 0 -4px white, 4px 0 white, -4px 0 white;
+      -webkit-transition: 0.4s;
+      transition: 0.4s;
+    }
+
+    &::after {
+      position: absolute;
+      content: "OFF";
+      height: 26px;
+      width: 26px;
+      left: 0;
+      bottom: $toggle-border-size + 2;
+      color: white;
+      padding-top: 2px;
+      padding-left: calc($toggle-height - $toggle-border-size);
+      width: 100%;
+      text-align: center;
+    }
+
+    &:hover {
+      background-color: $toggle-hover-color;
+    }
+
+    &__shadow {
+      position: absolute;
+      width: calc(100% + ($toggle-border-size * 2));
+      height: calc(100% + ($toggle-border-size * 2));
+      left: -$toggle-border-size;
+      top: -$toggle-border-size;
+      clip-path: $toggle-btn-clip-path;
+      background-color: black;
+      z-index: -1;
+    }
+  }
+}

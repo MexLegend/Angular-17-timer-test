@@ -1,0 +1,36 @@
+@use "@styleVariables/images.scss" as images;
+
+.nes-input {
+  border: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &__field {
+    display: block;
+    border-image-slice: 2;
+    border-image-width: 2;
+    border-image-repeat: space;
+    border-image-source: url(images.$pixel-border-image);
+    border-image-outset: 2;
+    width: calc(100% - 8px);
+    padding: 0.5rem 1rem;
+    margin: 4px;
+    background-clip: padding-box;
+    border-style: solid;
+    border-width: 4px;
+    font-family: inherit;
+    font-size: inherit;
+    line-height: inherit;
+
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      margin: 0;
+    }
+  }
+}

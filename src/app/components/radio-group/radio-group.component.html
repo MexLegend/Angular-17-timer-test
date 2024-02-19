@@ -1,0 +1,27 @@
+<fieldset class="nes-radio-group">
+  <p class="nes-input__label">{{ label }}</p>
+  <div class="nes-radio-group__wrapper">
+    <label class="nest-radio">
+      <input
+        [id]="inputId"
+        type="radio"
+        [name]="groupName"
+        class="nes-radio__field"
+        [formControl]="formControl"
+        [value]="true"
+      />
+      <span class="nes-radio__content">Yes</span>
+    </label>
+    <label class="nest-radio">
+      <input
+        [id]="inputId"
+        type="radio"
+        [name]="groupName"
+        class="nes-radio__field"
+        [formControl]="formControl"
+        [value]="false"
+      />
+      <span class="nes-radio__content">No</span>
+    </label>
+  </div>
+</fieldset>

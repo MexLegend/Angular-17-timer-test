@@ -9,17 +9,19 @@
 html,
 body {
   height: 100%;
+  cursor: url("/assets/images/cursor.png") 14 0, pointer;
 }
 
 body {
   margin: 0;
   font-family: typo.$main-font;
-  cursor: url("/assets/images/cursor.png") 14 0, pointer;
   line-height: 1.5;
 }
 
 a,
-button {
+button,
+.switch,
+.nes-checkbox {
   cursor: url("/assets/images/cursor-click.png") 14 0, pointer;
 }
 

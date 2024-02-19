@@ -1,0 +1,22 @@
+<article class="timer-config-container">
+  <form class="timer-config-container__form" [formGroup]="form">
+    <app-input
+      inputId="timer"
+      type="number"
+      label="Timer value"
+      placeholder="0"
+      controlKey="timerValue"
+    />
+    <app-radio-group
+      groupName="timer-countdown"
+      inputId="timer-countdown"
+      label="Is it countdown?"
+      controlKey="isCountdown"
+    />
+  </form>
+  <app-button
+    *ngIf="!(showTimer | async)"
+    label="Start timer"
+    (handleClick)="startTimer()"
+  />
+</article>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { ContainerComponent } from 'app/components/container/container.component';
-import { TimerConfigurationComponent } from 'app/components/timer-configuration/timer-configuration.component';
-import { TimerComponent } from 'app/components/timer/timer.component';
+import { ContainerComponent } from '@components/container/container.component';
+import { TimerConfigurationComponent } from '@components/timer-configuration/timer-configuration.component';
+import { TimerComponent } from '@components/timer/timer.component';
 
 @Component({
   selector: 'app-basic-timer',

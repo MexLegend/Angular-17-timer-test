@@ -1,7 +1,8 @@
 import { NgClass } from '@angular/common';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
-type NesButtonType = 'PRIMARY' | 'SUCCESS' | 'ERROR';
+type NesButtonVariant = 'PRIMARY' | 'SUCCESS' | 'ERROR' | 'DEFAULT';
+type NesButtonType = 'button' | 'submit';
 
 @Component({
   selector: 'app-button',
@@ -12,7 +13,8 @@ type NesButtonType = 'PRIMARY' | 'SUCCESS' | 'ERROR';
 })
 export class ButtonComponent {
   @Input({ required: true }) label!: string;
-  @Input() type: NesButtonType = 'PRIMARY';
+  @Input() variant: NesButtonVariant = 'PRIMARY';
+  @Input() type: NesButtonType = 'button';
   @Input() customClasses?: string;
   @Output() handleClick: EventEmitter<boolean> = new EventEmitter();
 

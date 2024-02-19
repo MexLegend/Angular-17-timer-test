@@ -1,4 +1,4 @@
-<article *ngIf="!(showTimer | async)" class="timer-config-container">
+<article *ngIf="!showTimer()" class="timer-config-container">
   <form class="timer-config-container__form" [formGroup]="form">
     <app-input
       inputId="timer-value"

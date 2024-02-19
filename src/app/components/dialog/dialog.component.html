@@ -1,0 +1,18 @@
+<div class="nes-dialog-backdrop">
+  <dialog
+    class="nes-dialog"
+    [ngClass]="{
+      'nes-dialog--lg': size === 'lg',
+      'nes-dialog--md': size === 'md',
+      'nes-dialog--sm': size === 'sm'
+    }"
+  >
+    <h3 class="nes-dialog__title">{{ title }}</h3>
+    <p class="nes-dialog__description">{{ description }}</p>
+    <h1 class="nes-dialog__content">{{ timer | timer }}</h1>
+    <menu class="nes-dialog__menu">
+      <app-button label="Cancel" variant="DEFAULT" (handleClick)="close()" />
+      <app-button label="Confirm" (handleClick)="submit()" />
+    </menu>
+  </dialog>
+</div>

@@ -6,7 +6,8 @@
     "baseUrl": "./src",
     "paths": {
       "@styleVariables/*" : ["styles/variables/*"],
-      "@pages/*" : ["app/pages/*"]
+      "@pages/*" : ["app/pages/*"],
+      "@components/*" : ["app/components/*"]
     },
     "forceConsistentCasingInFileNames": true,
     "strict": true,

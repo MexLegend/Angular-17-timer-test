@@ -7,7 +7,7 @@
   border-image-slice: 2;
   border-image-width: 2;
   border-image-repeat: stretch;
-  border-image-source: url(images.$pixel-border-image);
+  border-image-source: url(images.$pixel-input-border-image);
   border-image-outset: 2;
   position: relative;
   display: inline-block;
@@ -39,6 +39,27 @@
 
   &:hover {
     text-decoration: none;
+  }
+
+  &--is-default {
+    color: #212529;
+    background-color: color.$default-color;
+
+    &::after {
+      box-shadow: inset -4px -4px color.$default-shadow-color;
+    }
+
+    &:hover {
+      background-color: color.$default-hover-color;
+
+      &::after {
+        box-shadow: inset -6px -6px color.$default-shadow-color;
+      }
+    }
+
+    &:active:not(.is-disabled)::after {
+      box-shadow: inset 4px 4px color.$default-shadow-color;
+    }
   }
 
   &--is-primary {

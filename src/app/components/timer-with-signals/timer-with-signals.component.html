@@ -1,0 +1,4 @@
+<article *ngIf="showTimer()" class="timer-container">
+  <app-button label="Stop timer" variant="ERROR" (handleClick)="stopTimer()" />
+  <p class="timer-value">{{ timer() | timer }}</p>
+</article>

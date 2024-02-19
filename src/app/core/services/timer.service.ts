@@ -1,16 +1,18 @@
-import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subscription, interval } from 'rxjs';
+import { Injectable, inject } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { ITimer } from '../interfaces/timer.interface';
+import { DialogService } from './dialog.service';
 
 @Injectable({
   providedIn: 'root',
 })
 export class TimerService {
+  private _timerIntervalId?: number;
   private readonly _timerSubject: BehaviorSubject<number> =
     new BehaviorSubject<number>(0);
   private readonly _showTimer: BehaviorSubject<boolean> =
     new BehaviorSubject<boolean>(false);
-  private _timerSubscription: Subscription | undefined;
+  private readonly _dialogService = inject(DialogService);
 
   getTimer(): Observable<number> {
     return this._timerSubject.asObservable();
@@ -23,22 +25,29 @@ export class TimerService {
   startTimer({ isCountdown, timerValue }: ITimer) {
     this._showTimer.next(true);
     let counter = isCountdown ? timerValue : 0;
-    this._timerSubscription = interval(1000).subscribe(() => {
+    this._timerSubject.next(counter);
+
+    this._timerIntervalId = setInterval(() => {
       if (
         (isCountdown && counter === 0) ||
-        (!isCountdown && counter === timerValue)
+        (!isCountdown && counter === +timerValue)
       ) {
-        this._timerSubscription?.unsubscribe();
+        clearInterval(this._timerIntervalId);
+        this._dialogService.open({
+          title: 'Basic Timer Ended',
+          timer: timerValue,
+          description: 'Would you like to reset the timer?',
+        });
         return;
       }
       isCountdown ? counter-- : counter++;
       this._timerSubject.next(counter);
-    });
+    }, 1000);
   }
 
   stopTimer() {
     this._showTimer.next(false);
     this._timerSubject.next(0);
-    this._timerSubscription?.unsubscribe();
+    clearInterval(this._timerIntervalId);
   }
 }

@@ -1,27 +1,25 @@
-import { Component, OnInit, inject } from '@angular/core';
-import { NavigationEnd, Router, RouterLink } from '@angular/router';
-import { filter } from 'rxjs/operators';
+import { Component, inject } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-toggle-switch',
   standalone: true,
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './toggle-switch.component.html',
   styleUrl: './toggle-switch.component.scss',
 })
-export class ToggleSwitchComponent implements OnInit {
-  public readonly router = inject(Router);
-  isChecked: boolean = false;
+export class ToggleSwitchComponent {
+  private readonly router = inject(Router);
 
-  ngOnInit(): void {
-    this.router.events
-      .pipe(
-        filter(
-          (event): event is NavigationEnd => event instanceof NavigationEnd
-        )
-      )
-      .subscribe((event: NavigationEnd) => {
-        this.isChecked = event.url === '/signals-timer';
-      });
+  get isSignalsTimerRouteActive() {
+    return this.router.url.includes('signals-timer');
+  }
+
+  toogleRoute(event: MouseEvent) {
+    event.preventDefault();
+
+    this.router.url.includes('signals-timer')
+      ? this.router.navigateByUrl('basic-timer')
+      : this.router.navigateByUrl('signals-timer');
   }
 }

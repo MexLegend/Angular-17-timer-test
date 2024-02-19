@@ -1,0 +1,16 @@
+.timer-config-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+
+  &__form {
+    display: flex;
+    gap: 3rem;
+    align-items: flex-start;
+
+    app-input {
+      display: flex;
+      max-width: 300px;
+    }
+  }
+}

@@ -1,11 +1,12 @@
 <button
-  class="nes-btn"
-  [class]="customClasses || ''"
+  class="nes-btn {{ customClasses }}"
   [ngClass]="{
-    'nes-btn--is-primary': type === 'PRIMARY',
-    'nes-btn--is-success': type === 'SUCCESS',
-    'nes-btn--is-error': type === 'ERROR',
+    'nes-btn--is-default': variant === 'DEFAULT',
+    'nes-btn--is-primary': variant === 'PRIMARY',
+    'nes-btn--is-success': variant === 'SUCCESS',
+    'nes-btn--is-error': variant === 'ERROR',
   }"
+  [type]="type"
   (click)="emitClick()"
 >
   {{ label }}

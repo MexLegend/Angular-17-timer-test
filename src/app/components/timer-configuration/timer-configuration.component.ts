@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { InputComponent } from '../input/input.component';
 import { ButtonComponent } from '../button/button.component';
 import { AsyncPipe, NgIf } from '@angular/common';
@@ -26,6 +26,7 @@ import { ITimerForm } from 'app/core/interfaces/timer.interface';
   ],
   templateUrl: './timer-configuration.component.html',
   styleUrl: './timer-configuration.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TimerConfigurationComponent {
   private readonly _timerService = inject(TimerService);

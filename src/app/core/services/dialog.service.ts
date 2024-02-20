@@ -6,19 +6,19 @@ import {
   inject,
 } from '@angular/core';
 import { DialogComponent } from '@components/dialog/dialog.component';
-import { Subject } from 'rxjs';
-import { CloseAction, IDialogProps } from '../interfaces/dialog.interface';
+import { Observable, Subject } from 'rxjs';
+import { IDialogProps } from '../interfaces/dialog.interface';
 
 @Injectable({
   providedIn: 'root',
 })
 export class DialogService {
-  private _dialogNotifier?: Subject<CloseAction>;
+  private _dialogNotifier?: Subject<boolean>;
 
   private readonly _appRef = inject(ApplicationRef);
   private readonly _injector = inject(EnvironmentInjector);
 
-  open(props: IDialogProps) {
+  open(props: IDialogProps): Observable<boolean> {
     const dialogComponent = createComponent(DialogComponent, {
       environmentInjector: this._injector,
     });
@@ -42,7 +42,7 @@ export class DialogService {
   }
 
   submitDialog() {
-    this._dialogNotifier?.next('Confirm');
+    this._dialogNotifier?.next(true);
     this.closeDialog();
   }
 }

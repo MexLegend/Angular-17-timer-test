@@ -1,4 +1,3 @@
-export type CloseAction = 'Confirm' | 'Close';
 
 export type DialogSize = 'lg' | 'md' | 'sm';
 

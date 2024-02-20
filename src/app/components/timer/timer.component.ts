@@ -1,4 +1,9 @@
-import { Component, OnDestroy, inject } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  OnDestroy,
+  inject,
+} from '@angular/core';
 import { ButtonComponent } from '../button/button.component';
 import { AsyncPipe, DatePipe, NgIf } from '@angular/common';
 import { Observable } from 'rxjs';
@@ -11,6 +16,7 @@ import { TimerService } from 'app/core/services/timer.service';
   imports: [ButtonComponent, AsyncPipe, DatePipe, TimerPipe, NgIf],
   templateUrl: './timer.component.html',
   styleUrl: './timer.component.scss',
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TimerComponent implements OnDestroy {
   showTimer!: Observable<boolean>;

@@ -1,0 +1,8 @@
+// Mixin to apply the theme
+@mixin apply-theme($themes, $theme) {
+  $theme-map: map-get($themes, $theme);
+
+  @each $property, $value in $theme-map {
+    --#{$property}: #{$value};
+  }
+}

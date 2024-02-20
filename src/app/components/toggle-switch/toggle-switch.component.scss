@@ -1,8 +1,9 @@
-@use "@styleVariables/colors.scss" as color;
+@use "abstracts/colors" as *;
+@use "themes/theme" as *;
 
 $toggle-border-size: 4px;
-$toggle-border-color: color.$error-color;
-$toggle-hover-color: color.$error-hover-color;
+$toggle-border-color: $error-color;
+$toggle-hover-color: $error-hover-color;
 $toggle-height: 40px;
 $toggle-width: 150px;
 $toggle-height: 40px;
@@ -54,7 +55,7 @@ $toggle-btn-clip-path: polygon(
     pointer-events: none;
 
     &:checked + .slider {
-      background-color: color.$success-color;
+      background-color: $success-color;
       color: white;
 
       &::before {
@@ -70,13 +71,13 @@ $toggle-btn-clip-path: polygon(
       }
 
       &:hover {
-        $toggle-hover-color: color.$success-hover-color;
+        $toggle-hover-color: $success-hover-color;
         background-color: $toggle-hover-color;
       }
     }
 
     &:focus + .slider {
-      box-shadow: 0 0 1px color.$success-color;
+      box-shadow: 0 0 1px $success-color;
     }
   }
 
@@ -90,7 +91,7 @@ $toggle-btn-clip-path: polygon(
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: color.$error-color;
+    background-color: $error-color;
     -webkit-transition: 0.4s;
     transition: 0.4s;
     border-radius: 100px;
@@ -135,7 +136,7 @@ $toggle-btn-clip-path: polygon(
       left: -$toggle-border-size;
       top: -$toggle-border-size;
       clip-path: $toggle-btn-clip-path;
-      background-color: black;
+      background-color: var($border-color);
       z-index: -1;
     }
   }

@@ -1,4 +1,6 @@
-@use "variables/typography.scss" as typo;
+@use "../abstracts/fonts" as *;
+@use "../themes" as *;
+@use "../abstracts/variables" as *;
 
 *,
 ::after,
@@ -9,20 +11,22 @@
 html,
 body {
   height: 100%;
-  cursor: url("/assets/images/cursor.png") 14 0, pointer;
+  cursor: url($cursor-image) 14 0, pointer;
 }
 
 body {
   margin: 0;
-  font-family: typo.$main-font;
+  font-family: $main-font;
   line-height: 1.5;
+  color: var($text-color);
+  background-color: var($bg-color);
 }
 
 a,
 button,
 .switch,
-.nes-checkbox {
-  cursor: url("/assets/images/cursor-click.png") 14 0, pointer;
+.nes-radio {
+  cursor: url($cursor-click-image) 14 0, pointer;
 }
 
 .container {

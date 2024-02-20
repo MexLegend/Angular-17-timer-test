@@ -1,0 +1,7 @@
+@use "../abstracts/fonts" as *;
+
+@font-face {
+  font-family: $main-font;
+  src: url("../../assets/fonts/PressStart2P.ttf") format("truetype");
+  font-style: normal;
+}

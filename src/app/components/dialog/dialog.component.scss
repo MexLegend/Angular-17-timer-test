@@ -1,4 +1,4 @@
-@use "@styleVariables/images.scss" as images;
+@use "themes/theme" as *;
 
 .nes-dialog-backdrop {
   z-index: 50;
@@ -20,7 +20,7 @@
     border-image-slice: 3;
     border-image-width: 3;
     border-image-repeat: space;
-    border-image-source: url(images.$pixel-dialog-border-image);
+    border-image-source: var($dialog-border-image);
     border-image-outset: 2;
     border-style: solid;
     border-width: 4px;
@@ -29,8 +29,8 @@
     height: fit-content;
     padding: 1em;
     margin: auto;
-    color: #000;
-    background: #fff;
+    color: var($text-color);
+    background: var($bg-color);
     inset-block-start: 0px;
     inset-block-end: 0px;
     max-width: calc(100% - 2em - 6px);

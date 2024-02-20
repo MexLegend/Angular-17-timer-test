@@ -6,8 +6,12 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [NgOptimizedImage],
   templateUrl: './toggle-theme.component.html',
-  styleUrl: './toggle-theme.component.scss'
+  styleUrl: './toggle-theme.component.scss',
 })
 export class ToggleThemeComponent {
+  isDark = false;
 
+  toggleTheme() {
+    this.isDark = !this.isDark;
+  }
 }

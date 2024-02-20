@@ -1,5 +1,5 @@
-@use "@styleVariables/colors.scss" as color;
-@use "@styleVariables/images.scss" as images;
+@use "abstracts/colors" as *;
+@use "themes/theme" as *;
 
 .nes-btn {
   text-align: center;
@@ -7,7 +7,7 @@
   border-image-slice: 2;
   border-image-width: 2;
   border-image-repeat: stretch;
-  border-image-source: url(images.$pixel-input-border-image);
+  border-image-source: var($input-border-image);
   border-image-outset: 2;
   position: relative;
   display: inline-block;
@@ -43,85 +43,85 @@
 
   &--is-default {
     color: #212529;
-    background-color: color.$default-color;
+    background-color: $default-color;
 
     &::after {
-      box-shadow: inset -4px -4px color.$default-shadow-color;
+      box-shadow: inset -4px -4px $default-shadow-color;
     }
 
     &:hover {
-      background-color: color.$default-hover-color;
+      background-color: $default-hover-color;
 
       &::after {
-        box-shadow: inset -6px -6px color.$default-shadow-color;
+        box-shadow: inset -6px -6px $default-shadow-color;
       }
     }
 
     &:active:not(.is-disabled)::after {
-      box-shadow: inset 4px 4px color.$default-shadow-color;
+      box-shadow: inset 4px 4px $default-shadow-color;
     }
   }
 
   &--is-primary {
     color: #fff;
-    background-color: color.$primary-color;
+    background-color: $primary-color;
 
     &::after {
-      box-shadow: inset -4px -4px color.$primary-shadow-color;
+      box-shadow: inset -4px -4px $primary-shadow-color;
     }
 
     &:hover {
-      background-color: color.$primary-hover-color;
+      background-color: $primary-hover-color;
 
       &::after {
-        box-shadow: inset -6px -6px color.$primary-shadow-color;
+        box-shadow: inset -6px -6px $primary-shadow-color;
       }
     }
 
     &:active:not(.is-disabled)::after {
-      box-shadow: inset 4px 4px color.$primary-shadow-color;
+      box-shadow: inset 4px 4px $primary-shadow-color;
     }
   }
 
   &--is-success {
     color: #fff;
-    background-color: color.$success-color;
+    background-color: $success-color;
 
     &::after {
-      box-shadow: inset -4px -4px color.$success-shadow-color;
+      box-shadow: inset -4px -4px $success-shadow-color;
     }
 
     &:hover {
-      background-color: color.$success-hover-color;
+      background-color: $success-hover-color;
 
       &::after {
-        box-shadow: inset -6px -6px color.$success-shadow-color;
+        box-shadow: inset -6px -6px $success-shadow-color;
       }
     }
 
     &:active:not(.is-disabled)::after {
-      box-shadow: inset 4px 4px color.$success-shadow-color;
+      box-shadow: inset 4px 4px $success-shadow-color;
     }
   }
 
   &--is-error {
     color: #fff;
-    background-color: color.$error-color;
+    background-color: $error-color;
 
     &::after {
-      box-shadow: inset -4px -4px color.$error-shadow-color;
+      box-shadow: inset -4px -4px $error-shadow-color;
     }
 
     &:hover {
-      background-color: color.$error-hover-color;
+      background-color: $error-hover-color;
 
       &::after {
-        box-shadow: inset -6px -6px color.$error-shadow-color;
+        box-shadow: inset -6px -6px $error-shadow-color;
       }
     }
 
     &:active:not(.is-disabled)::after {
-      box-shadow: inset 4px 4px color.$error-shadow-color;
+      box-shadow: inset 4px 4px $error-shadow-color;
     }
   }
 }

@@ -1,3 +1,11 @@
-<button class="nes-toggle-theme">
-  <img ngSrc="assets/images/filled-sun-icon.svg" width="36" height="36" />
+<button class="nes-toggle-theme" (click)="toggleTheme()">
+  <img
+    [ngSrc]="
+      isDark
+        ? 'assets/images/filled-sun-icon.svg'
+        : 'assets/images/filled-moon-icon.svg'
+    "
+    width="36"
+    height="36"
+  />
 </button>

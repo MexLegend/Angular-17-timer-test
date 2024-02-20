@@ -1,7 +1,0 @@
-@use 'variables/typography.scss' as typo;
-
-@font-face {
-	font-family: typo.$main-font;
-	src: url('../assets/fonts/PressStart2P.ttf') format('truetype');
-	font-style: normal;
-}

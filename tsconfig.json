@@ -5,7 +5,6 @@
     "outDir": "./dist/out-tsc",
     "baseUrl": "./src",
     "paths": {
-      "@styleVariables/*" : ["styles/variables/*"],
       "@pages/*" : ["app/pages/*"],
       "@components/*" : ["app/components/*"]
     },

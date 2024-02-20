@@ -1,4 +1,4 @@
-@use "@styleVariables/images.scss" as images;
+@use "themes/theme" as *;
 
 .nes-input {
   border: none;
@@ -9,11 +9,12 @@
   gap: 0.5rem;
 
   &__field {
+    --svg-fill-color: white;
     display: block;
     border-image-slice: 2;
     border-image-width: 2;
     border-image-repeat: space;
-    border-image-source: url(images.$pixel-input-border-image);
+    border-image-source: var($input-border-image);
     border-image-outset: 2;
     width: calc(100% - 8px);
     padding: 0.5rem 1rem;
@@ -24,6 +25,16 @@
     font-family: inherit;
     font-size: inherit;
     line-height: inherit;
+    background-color: var($bg-color);
+    color: var($text-color);
+
+    path {
+      fill: red;
+    }
+
+    &::placeholder {
+      color: #757575;
+    }
 
     &::-webkit-inner-spin-button,
     &::-webkit-outer-spin-button {

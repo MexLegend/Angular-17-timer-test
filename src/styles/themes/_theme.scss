@@ -1,0 +1,44 @@
+@use "../abstracts/colors" as *;
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+//Shortcuts
+$bg-color: --background-color;
+$text-color: --text-color;
+$border-color: --border-color;
+$input-border-image: --input-border-image;
+$dialog-border-image: --dialog-border-image;
+$nav-border-color: --navbar-border-color;
+$nes-radio-prefix-color: --nes-radio-prefix-color;
+
+// Themes
+$themes: (
+  light: (
+    background-color: $background-light,
+    text-color: $text-light,
+    border-color: $border-light,
+    dialog-border-image: $dialog-border-image-light,
+    input-border-image: $input-border-image-light,
+    navbar-border-color: $navbar-border-light,
+    nes-radio-prefix-color: $nes-radio-prefix-light,
+  ),
+  dark: (
+    background-color: $background-dark,
+    text-color: $text-dark,
+    border-color: $border-dark,
+    dialog-border-image: $dialog-border-image-dark,
+    input-border-image: $input-border-image-dark,
+    navbar-border-color: $navbar-border-dark,
+    nes-radio-prefix-color: $nes-radio-prefix-dark,
+  ),
+);
+
+// Light Theme
+html {
+  @include apply-theme($themes, light);
+}
+
+// Dark Theme
+html.dark {
+  @include apply-theme($themes, dark);
+}

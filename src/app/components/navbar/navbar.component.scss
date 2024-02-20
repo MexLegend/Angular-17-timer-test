@@ -8,7 +8,8 @@
   background-color: white;
 
   &__wrapper {
-    padding: 1rem 0;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -38,12 +39,23 @@
       a {
         display: flex;
         height: fit-content;
-        transition: transform ease-in-out .2s;
+        transition: transform ease-in-out 0.2s;
 
         &:hover {
           transform: scale(1.1);
         }
       }
     }
+  }
+}
+
+@media (max-width: 640px) {
+  img {
+    max-width: 200px;
+    height: auto;
+  }
+  .navbar .logo h3 {
+    font-size: 14px;
+    padding-left: 54px;
   }
 }

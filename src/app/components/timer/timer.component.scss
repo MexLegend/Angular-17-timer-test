@@ -1,6 +1,7 @@
 .timer-container {
   display: flex;
   flex-direction: column;
+  align-items: center;
 
   .timer-value {
     font-size: 40px;
@@ -9,8 +10,12 @@
 }
 
 @media (min-width: 640px) {
-  .timer-container .timer-value {
-    font-size: 50px;
+  .timer-container {
+    align-items: start;
+
+    .timer-value {
+      font-size: 50px;
+    }
   }
 }
 

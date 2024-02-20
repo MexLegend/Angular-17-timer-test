@@ -1,4 +1,6 @@
 .nes-container {
+  display: flex;
+  flex-direction: column;
   position: relative;
   padding: 1.5rem 2rem;
   border-color: #000;
@@ -11,5 +13,12 @@
     margin: -1.8rem 0 1rem;
     font-size: 1rem;
     background-color: #fff;
+    width: max-content;
+  }
+}
+
+@media (max-width: 640px) {
+  .nes-container {
+    align-items: center;
   }
 }

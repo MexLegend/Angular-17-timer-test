@@ -29,23 +29,30 @@
       }
     }
 
-    .social-media {
+    .right-actions {
       display: flex;
       align-items: center;
       gap: 1.2rem;
-      list-style: none;
 
-      li,
-      a {
+      .social-media {
         display: flex;
-        height: fit-content;
-        transition: transform ease-in-out 0.2s;
-
-        &:hover {
-          transform: scale(1.1);
+        align-items: center;
+        gap: 1.2rem;
+        list-style: none;
+  
+        li,
+        a {
+          display: flex;
+          height: fit-content;
+          transition: transform ease-in-out 0.2s;
+  
+          &:hover {
+            transform: scale(1.1);
+          }
         }
       }
     }
+
   }
 }
 

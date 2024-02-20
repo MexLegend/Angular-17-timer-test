@@ -19,6 +19,6 @@ import { ToggleSwitchComponent } from '@components//toggle-switch/toggle-switch.
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'angular-test';
+  title = 'angular-timer-test';
   
 }

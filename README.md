@@ -2,7 +2,7 @@
 
 <img src="https://res.cloudinary.com/devmexsoft/image/upload/v1701722693/Projects%20Thumbnails/Angflix_Thumbnail_ghrkza.png" height="700px"/>
 
-### [Demo](https://angular-timer-test.vercel.app) 
+### [Demo](https://angular-timer-test.vercel.app){:target="_blank"}
 
 ## Cloning the repository
 

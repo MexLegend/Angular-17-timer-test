@@ -34,11 +34,11 @@ $themes: (
 );
 
 // Light Theme
-html {
+body {
   @include apply-theme($themes, light);
 }
 
 // Dark Theme
-html.dark {
+body.dark {
   @include apply-theme($themes, dark);
 }

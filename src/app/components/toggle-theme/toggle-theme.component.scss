@@ -1,5 +1,9 @@
+@use "themes/theme" as *;
+
 .nes-toggle-theme {
   display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 0;
   font-family: inherit;
   font-size: inherit;
@@ -10,6 +14,11 @@
   height: 36px;
   width: 36px;
   transition: transform ease-in-out 0.2s;
+  color: var($text-color);
+
+  * {
+    display: flex;
+  }
 
   &:hover {
     transform: scale(1.1);

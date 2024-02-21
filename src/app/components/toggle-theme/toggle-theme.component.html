@@ -1,11 +1,4 @@
 <button class="nes-toggle-theme" (click)="toggleTheme()">
-  <img
-    [ngSrc]="
-      isDark
-        ? 'assets/images/filled-sun-icon.svg'
-        : 'assets/images/filled-moon-icon.svg'
-    "
-    width="36"
-    height="36"
-  />
+  <app-moon-icon *ngIf="theme() === 'LIGHT'" [size]="32" />
+  <app-sun-icon *ngIf="theme() === 'DARK'" [size]="32" />
 </button>

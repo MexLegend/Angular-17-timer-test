@@ -1,6 +1,6 @@
 # Angular Timer Test
 
-<img src="https://res.cloudinary.com/devmexsoft/image/upload/v1701722693/Projects%20Thumbnails/Angflix_Thumbnail_ghrkza.png" height="700px"/>
+<img src="https://res.cloudinary.com/devmexsoft/image/upload/v1708486914/Projects%20Thumbnails/Angular_Timer_Test_Thumbnail_kiw8xq.png" height="700px"/>
 
 ### [Demo](https://angular-timer-test.vercel.app)
 
